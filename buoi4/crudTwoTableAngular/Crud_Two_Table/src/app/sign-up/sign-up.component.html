@@ -1,0 +1,87 @@
+<div class="container">
+  <form class="box" class="form-register" #f="ngForm" (ngSubmit)="ngSubmit()" novalidate>
+    <table>
+      <tr>
+        <th colspan="2" id="title">Register</th>
+      </tr>
+      <tr>
+        <th><label class="form-label">Name</label></th>
+        <td><input matInput placeholder="Name ..." name="name" [(ngModel)]="form.name" #name="ngModel" required
+                   minlength="3" maxlength="50">
+        </td>
+      </tr>
+      <tr>
+        <th><label class="form-label">Username</label></th>
+        <td><input matInput placeholder="Username ..." name="username" [(ngModel)]="form.username" #username="ngModel"
+                   required minlength="3" maxlength="50">
+        </td>
+      </tr>
+      <tr>
+        <th><label class="form-label">Email</label></th>
+        <td><input matInput name="email" [(ngModel)]="form.email" [formControl]="emailFormControl" required></td>
+      </tr>
+      <tr>
+        <th><label class="password">Password</label></th>
+        <td>
+          <input name="password" matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="form.password"
+                 #password="ngModel" required minlength="6" maxlength="100">
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" id="center">
+          <button type="submit" class="btn btn-primary" id="submit">Create</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
+<div>
+</div>
+
+
+<!--<div class="container">-->
+<!--  <div class="row">-->
+<!--    <div class="col-12" style="margin-top: 20px">-->
+<!--      <mat-card style="margin: 50px 0">-->
+<!--        <form class="form-register" #f="ngForm" (ngSubmit)="f.form.valid&& ngSubmit()" novalidate>-->
+<!--          <div>{{status}}</div>-->
+<!--            <button *ngIf="checkSuccess" routerLink="/login" mat-stroked-button color="accent" class="mat-button-toggle-group btn-outline-success">-->
+<!--              <mat-icon color="accent" matPrefix>trending_flat</mat-icon>Please Login-->
+<!--            </button>-->
+
+<!--          &lt;!&ndash; NAME ssss&ndash;&gt;-->
+<!--          <mat-form-field style="width: 350px" appearance="outline">-->
+<!--            <mat-label>Name</mat-label>-->
+<!--            <input matInput placeholder="Name ..." name="name" [(ngModel)]="form.name" #name="ngModel" required minlength="3" maxlength="50">-->
+
+<!--          </mat-form-field><br><br><br>-->
+<!--          &lt;!&ndash; USERNAME &ndash;&gt;-->
+<!--          <mat-form-field style="width: 350px" appearance="outline">-->
+<!--            <mat-label>Username</mat-label>-->
+<!--            <input matInput placeholder="Username ..." name="username" [(ngModel)]="form.username" #username="ngModel" required minlength="3" maxlength="50">-->
+
+
+<!--          </mat-form-field><br><br><br>-->
+<!--          &lt;!&ndash; EMAIL &ndash;&gt;-->
+<!--          <mat-form-field style="width: 350px" appearance="outline">-->
+<!--            <mat-label>Email: </mat-label>-->
+<!--            <input matInput name="email" [(ngModel)]="form.email" [formControl]="emailFormControl" required>-->
+
+<!--          </mat-form-field><br><br><br>-->
+<!--          &lt;!&ndash; Pass &ndash;&gt;-->
+<!--          <mat-form-field style="width: 350px" appearance="outline">-->
+<!--            <mat-label>Enter your password</mat-label>-->
+<!--            <input name="password" matInput [type]="hide ? 'password' : 'text'" [(ngModel)]="form.password" #password="ngModel" required minlength="6" maxlength="100" >-->
+
+<!--            <div *ngIf="password.hasError('required')">The password is required</div>-->
+<!--            <div *ngIf="password.hasError('minlength')">The password must more than 5 character</div>-->
+<!--          </mat-form-field><br>-->
+<!--          <button mat-stroked-button color="accent" class="mat-button-toggle-group btn-outline-success">Register-->
+
+<!--          </button>-->
+<!--        </form>-->
+
+<!--      </mat-card>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
